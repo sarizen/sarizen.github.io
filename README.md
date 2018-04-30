@@ -23,7 +23,7 @@ Syntax highlighted code block
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](sarizen.github.io/flowchartexplanation.xml) and ![Image](src)
+[Link](sarizen.github.io/flowchart explanation.xml) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
