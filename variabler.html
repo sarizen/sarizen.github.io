@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Variabeltyper</title>
+	<style type="text/css">
+		table {
+			border-top: 1px solid black;
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+		}
+		th {
+			text-align: left;
+		}
+		#right {
+			border-bottom: 1px solid black;
+			background: lightpink;
+		}
+		#left {
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            background: yellow;
+		}
+		.rightcell{
+			border-left: 1px solid black;
+			border-bottom: 1px solid black;
+		}
+		.leftcell {
+			border-bottom: 1px solid black;
+		}
+		.bottomtable {
+			border-bottom: 1px solid black;
+		}
+
+</style>	
+</head>
+<body>
+
+<h2>Variabeltyper i C#</h2>
+
+<table>
+	<tr>
+		<th id="right">Variabeltyper</th>
+		<th id="left">Beskrivning</th>
+</tr>
+<tr>
+	<td class="leftcell">type</td>
+	<td class="rightcell">8-bitars heltal (unsigned)</td>
+	<tr>
+	<td class="leftcell">short</td>
+	<td class="rightcell">16-bitars heltal</td>
+</tr>
+<tr>
+	<td class="leftcell">int</td>
+	<td class="rightcell">32-bitars heltal</td>
+</tr>
+<tr>
+<td class="leftcell">long</td>
+<td class="rightcell">64-bitars heltal</td>
+</tr>
+<tr>
+	<td class="leftcell">float</td>
+	<td class="rightcell">32-bitars decimaltal</td>
+</tr>
+<tr>
+	<td class="leftcell">double</td>
+	<td class="rightcell">64-bitars decimaltal</td>
+</tr>
+<tr>
+	<td class="leftcell">char</td>
+	<td class="rightcell">16-bitars tecken (unicode)</td>
+</tr>
+<tr>
+	<td class="leftcell">string</td>
+	<td class="rightcell">textsträng</td>
+</tr>
+<tr>
+	<td class="bottomtable">bool</td>
+	<td class="rightcell">Booleansk variabeltyp, kan bara ha värdena <strong>true</strong> eller <strong>false</strong>.</td>
+</tr>
+</table>
+
+<p>En <strong>int</strong> (32 bitar) kan innehålla värden från −2,147,483,648 till 2,147,483,647. 16-bitars kan ha värden från −32,768 till 32,767. 1 byte (8 bitar) kan ha värden från 0 till 2552.</p>
+<p><strong>float</strong> och <strong>double</strong> finns till för att lagra decimaltal i variabeln. Storleken skiljer åt hur mycket som kan lagras. Genom att skriva f i slutet av talet indikeras det.</p>
+<p>En textsträng ses enklast som en sekvens med tecken, oftast alfabetiska sådana. En variabel av typen <strong>string</strong> kan i C# innehålla text. Allt som skrivs in i <strong>Console.WriteLine()</strong> är eller omvandlas till en textsträng.</p>
+<p><strong>Char</strong> är inte lika omfattande som <strong>string</strong> då den bara kan innehålla ett tecken. Varje bokstav som skrivs i <strong>char</strong> representeras av en siffra, något som kallas i UNICODE-tabellen. Det är en tabell som innehåller de flesta tecken som finns i världen och alla dess alfabet. Varje tecken har en siffra som motsvarar tecknet. Siffran 97 motsvarar "a", 98 "b" osv. Därför står det också unicode i tabellen.</p>
+<p>En variabel av typen <strong>bool</strong> kan endast innehålla 1 av 2 värden, <strong>true</strong> eller <strong>false</strong>. Ger mest användning i samband med <strong>if</strong>-satser och loopar.</p>
+<p>Variabler är föränderliga men det finns också konstanter i C#. De är oföränderliga variabler. De görs om till en konstant genom att <strong>const</strong> sätts framför. Variabelns värde måste anges för att kompilatorn inte ska klaga. Konstanter anges främst för att man ska kunna hålla koll på sina variabler.</p>
+<p>Console.WriteLine() är till för att skriva ut saker på skärmen och för att läsa in data från användaren körs metoden <strong>Console.ReadLine()</strong>. Texten som användaren skriver in sparas i en <strong>string</strong>-variabel som vi kallar <strong>readText</strong> och sedan skrivs ut. Här använder vi oss av metoden <strong>Console.Write()</strong> istället för Console.WriteLine() då skillnaden är att den förstnämnda inte lägger in någon blankrad efter texten. </p>
+<p>Det går att konvertera variabler, t.ex. om vi vill läsa in ett heltal från en användare. För att läsa in något behöver vi använda oss av Console.ReadLine, men den ger oss bara strängar. Då måste vi ersätta string till int. Det gör vi med metoden <strong>Convert.ToInt32 ();</strong>. Sedan anges variabeln <strong>strNr</strong> som är en blandning mellan string och nr.</p> 
+<p><em>Anledningen till att vi skriver in Convert.ToInt32 är att CLI int. i C# heter Int32 i CLI</em></p>
+<p>Ett annat sätt att ändra variabler är genom typomvandling. Det är användbart om man vill tilldela en variabel av ett värde som fås av en annan slags variabeltyp. Komplilatorn ändrar automatiskt från t.ex. int nr till string. Det går inte att göra tvärtom utan då får man konvertera. Små saker får plats i stora men inte tvärtom. Det går att tvinga kompilatorn att godkänna konvertering från t.ex int till byte, läs mer på s. 54. 
+I binär kod krävs det 20 bitar att skriva talet 999999: 1111 0100 0010 0011 1111. 63 skrivs med 6 bitar: 11 1111 eller 8 bitar: 0011 1111. En byte bryr sig bara om de 8 första bitarna av talet 999999, dvs. 1111 0011 och ger då talet 63.
+En typkonvertering användes även i datatypen <strong>char</strong></p>
+<p>Variabelnamn anges alltid med liten bokstav. Om en variabel innehåller 2 ord eller flera anges de övriga orden med stor bokstav, t.ex <strong>myChar</strong></p>
+<h2>Operatorer</h2>
+<h3>Jämförelseoperatorer</h3>
+<table>
+	<tr>
+	    <th id="right">Tecken</th>
+	    <th id="left">Betydelse</th>
+    </tr>
+	<tr>
+		<td class="leftcell">==</td>
+		<td class="rightcell">Lika med</td>
+	</tr>
+	<tr>
+		<td class="leftcell"><</td>
+		<td class="rightcell">Mindre än</td>
+	</tr>
+	<tr>
+		<td class="leftcell">></td>
+		<td class="rightcell">Mer än</td>
+	</tr>
+	<tr>
+		<td class="leftcell"><=</td>
+		<td class="rightcell">Mindre än eller lika med</td>
+	</tr>
+	<tr>
+		<td class="leftcell">>=</td>
+		<td class="rightcell">Större än eller lika med</td>
+	</tr>
+	<tr>
+		<td class="bottomtable">!=</td>
+		<td class="rightcell">Inte lika med</td>
+	</tr>
+</table>
+<p>Jämförelseoperatorer används tillsammans med <strong>if-satser</strong> och loopar. Då används ofta något som kallas logiska operatorer.</p>
+<h3>Logiska operatorer</h3>
+<table>
+	<tr>
+	    <th id="left">Tecken</th>
+	    <th id="right">Betydelse</th>
+    </tr>
+    <tr>
+    	<td class="leftcell">&&</td>
+    	<td class="rightcell">Och</td>
+    </tr>
+    <tr>
+    	<td class="leftcell">||</td>
+    	<td class="rightcell">Eller</td>
+    </tr>
+    <tr>
+    	<td class="bottomtable">!</td>
+    	<td class="rightcell">Inte</td>
+    </tr>
+</table>
+<h3>Räkneoperatorer</h3>
+<table>
+	<tr>
+	    <th id="left">Tecken</th>
+	    <th id="right">Betydelse</th>
+	</tr>
+	<tr>
+		<td class="leftcell">+</td>
+		<td class="rightcell">Addition</td>
+	</tr>
+	<tr>
+		<td class="leftcell">-</td>
+		<td class="rightcell">Subtraktion</td>
+	</tr>
+	<tr>
+		<td class="leftcell">*</td>
+		<td class="rightcell">Multiplikation</td>
+	</tr>
+	<tr>
+		<td class="leftcell">/</td>
+		<td class="rightcell">Division</td>
+	</tr>
+	<tr>
+		<td class="leftcell">++</td>
+		<td class="rightcell">Öka med ett</td>
+	</tr>
+	<tr>
+		<td class="leftcell">--</td>
+		<td class="rightcell">Minska med ett</td>
+	</tr>
+	<tr>
+		<td class="bottomtable">%</td>
+		<td class="rightcell">Rest efter division</td>
+	</tr>   
+</table>
+<p>En <strong>if-sats</strong> är en typ av villkorssats. Det är den enda villkorssatsen som behöver läras för att ett språk ska vara turingkomplett. Ofta nämns villkorssatser med namnet selektion. Ett program behöver göra olika val beroende på olika paramterar och värden på saker och ting och då kan if-satser användas. Med hjälp av if-satser kan olika värden jämföras med varandra.</p>
+<p>Villkorssatsen <strong>==</strong> används för att jämföra om något är exakt lika med något annat. Det är skillnad på <em>jämförelseopartorn</em> <strong>==</strong> och <em>tilldelningsoperatorn</em> <strong>=</strong> då den sistnämnda tilldelar variabeln ett värde.</p>
+<p>En if-sats kan skrivas i <em>pseudokod</em> vilket sedan översätts till programmeringsspråk. Exempel på pseudokod är:</p> 
+<p><em>IF temperature is 100</em></p>
+<p><em>write "It's boiling!" on the screen.</em></p>
+<p>Det vi vill kontrollera, om temperaturen är 100 grader, ligger efter if (). Därefter anges ingen ; utan istället {}. Däri ligger den kod vi vill ska utföras om villkorssatsen stämmer.</p>
+<p>Att använda en if-sats utan något mer gör att vi kör en stycke kod (den mellan hakparanteserna) om villkorssatsen visar sig stämma. Annars gör vi ingenting och ifylls ett resultat som diffar mot det förväntade slutar programmet att köras. Om vi vill att något annat ska köras använder vi oss av villkorssatsen <strong>else</strong></p>
+<p>Vill man ha ytterligare ett alternativ kan <strong>else if</strong> läggas in. Den skrivs som pseudokod mellan if och else. Det går att använda sig av else if utan else.</p>
+<p><strong>Och-operatorn &&</strong> kan användas om man vill kontrollera att 2 eller flera saker stämmer samtidigt.</p>
+<p><strong>Eller-operatorn</strong> <strong>||</em></strong> fungerar på samma sätt som och-operatorn. Istället för att båda värdena måste stämma räcker det med att ena värdet gör det.</p>
+<p>Om man vill ha en if-sats inuti en annan if-sats är det fullt möjligt och det kallas <strong>nästlade if-satser</strong></p>
+<p><strong>Switch</strong> är en typ av selektion som används istället för att fylla upp med en massa <em>else if</em> vid olika tänkta utfall. Det går till i följande steg:
+<ol>
+	<li>En heltalsvariabel skapas som vi tilldelar ett värde</li>
+	<li>Ordet <strong>switch</strong> används följt av variabelnamnet</li>
+	<li>Beroende på innehållet i variabeln får vi 3 olika utfall:
+		<ul>
+			<li>De första 2 utfallen tar hand om värdet i variabeln om man skriver det värde vi tilldelat variabeln</li>
+			<li>Utfallet <strong>default</strong> tar hand om alla andra värden</li>
+		</ul>
+	</li>
+</ol>
+Det som står efter <strong>case</strong> är inte ett kodblock med klammerparenteser utan med ordet <strong>break;</strong> som avbryter hela switch-satsen.</p>
+<p><strong>Loop</strong> kallas det när ett kodstycke upprepas hela tiden. Det kan även kallas slinga eller iteration. Kodstycket upprepas oftast så länge ett visst villkor är sant. <strong>While</strong>-loopen är den viktigaste och mest användbara loopen och den enda som är värd att kunna. Här beskrivs den i pseudokod:</p>
+<p><em>WHILE something SO<br>
+Do this<br>
+END WHILE</em></p>
+<p>Ett annat exempel för vad vi konkret kan göra:</p>
+<p><em>WHILE temperature is less than 100 SO<br>
+Add temperature by 1 and write line<br>
+Write "water is boiling"<br>
+END WHILE</em></p>
+<p>Evighetsloop är när något loopar oändligt länge. Det skapas genom följande kodstycke:<br>
+	<br>
+<em>while(true)<br>
+{<br>
+    Console.WriteLine("loop...");<br>
+}<br></em>
+<br>
+En loop fortsätter så länge det som står i parenterserna är sant, i det här fallet föralltid eftersom <em>true</em> alltid är sant. Med frasen <strong>break;</strong> avbryts den aktuella while-loopen, alltså den loop som körs inuti en annan loop. En while-loop är användbar om man vill att något ska köras tills användaren har gjort vissa val. Då bygger man bara på med <em>if</em> och <em>else if</em> tills användaren fyllt i alla sina val. Om något av valen leder en till ett ett annat program (man väljer t.ex. att spela ett spel) kommer man åter hamna i menyn när spelet är klart. Valen är alltså bara delar av <em>while-loopen.</em></p>
+<p>Närbesläktat med <em>break</em> är <em>continue</em> men skillnaden är att den inte avslutar loopen utan bara just det varvet av loopen och går vidare till nästa. varv</p>
+<p><strong>Do while</strong> fungerar som while men kontroll huruvida loopen ska fortsätta ligger efter koden i loopen. Så först skrivs <em>do</em> ut och sedan <em>while</em>.</p>
+<p>Med do while slipper man skriva ut samma kodstycke 2 gånger eftersom vi kan välja vilken kod den ska loopa tills den nått önskat resultat och det blir snyggare kod.</p>
+<p>All kod vi skriver ligger mellan 2 klammerparenteser <strong>{</strong> och <strong>}</strong> och koden som ryms mellan dem kallas kodblock. Den kan i sig innehålla flera andra kodblock som kallas underkodblock. Det kan se ut enligt följande exempel:</p>
+<p>
+<h3><em>Kodblock 1</em></h3>	
+<ul><li><em>{</em></li></ul>
+<ul>
+	<li><em>Underkodblock 1.1<br>
+	{</em></li>
+		<li><em>Under-underkodblock 1.1.1<br>
+		{<br>
+		}</em></li></ul>
+<li><em>}<br>
+Underkodblock 1.2<br>
+{<br>
+<br>
+}</em></li>
+</ul><br>
+<h3><em>{<br>
+Kodblock 2<br>
+}</em></h3>
+</p>
+<p><em>class Program</em> innehåller metoden <em>Main().</em> som kan innehålla eller if-satser som i sin tur kan innehålla loopar och if-satser osv.</p>
+<h3>Några regler för vad man kan lägga in:</h3>
+<ul>
+	<li>Klasser kan innehålla deklaration av metoder eller variabler</li>
+	<li>Metoder kan innehålla deklaration av variabler, anrop till andra metoder, jämförelsesatser och loopar. Metoder kan inte innehålla deklaration av klasser eller metoder.</li>
+	<li>Jämförelsesatser och loopar kan innehålla variabler, anrop till andra metoder, jämförelsesatser och loopar. De kan inte innehålla deklaration av klasser eller metoder.</li>
+</ul>
+<p>Om man endast har en rad i en loop behövs inga klammerparenteser användas. se s. 69.</p>
+<p>För att snabbt formatera kod i C# kan man hålla inne <em>ctrl</em> och sedan <em>k</em> och därefter <em>d</em></p>
+<h2>Pseudokod och aktivitetsdiagram</h2>
+<h3>Pseudokod</h3>
+<p>Pseudo betyder falsk eller istället för och pseudokod är all kod som är skriven på mänskligt språk och inte knutet till ett speciellt programmeringsspråk. Pseudokod är vad vi anger när vi skriver ut vad som ska ske i ett program och används som instruktioner. Viktigt att använda rätt ord, t.ex.:<br>
+<em>IF something is yellow<br>
+DO ask for another input<br>
+ELSE finish menue<br></em>
+Nu vet vi att vi ska infoga <em>if</em>-satsen och om användaren anger "yellow" ska vi be om mer inmatad data, annars ska menyvalet avslutas.<br>
+Det finns ingen standard för pseudokod så det kan vara svårt att tolka. Viktigt är att alltid skriva på engelska.<br>
+Det är fullt tillåtet att använda sig av andras smarta lösningar, algoritmer, som är skrivna i pseudokod.</p>
+<h3>Aktivitetsdiagram</h3>
+<p></p>
+</body>
+</html>
